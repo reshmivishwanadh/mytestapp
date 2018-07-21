@@ -20,8 +20,8 @@ var name= "hii";
       //type: 'POST',
        type: 'GET',
        //url: 'http://www.creatnlrn.com/api/result.php',
-       url: 'http://www.creatnlrn.com/api/test/user/'+name+'/'+test+'/',
-      // data: {'name':name,'score' : test},
+       url: 'http://www.creatnlrn.com/api/test/user/divya/100/',
+      // data: {'name':name,'score' : test}'  ,
        cache: false,
        success: function(response){
         window.location.href = "../index.html";
