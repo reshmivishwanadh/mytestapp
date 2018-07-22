@@ -15,46 +15,45 @@
     <title>Demo</title>
   </head>
   <body>
-    <nav class="navbar navbar-light bg-white">
-      <a class="navbar-brand" href="#">
-        <img src="img/logo.png" width="80" height="40" alt="">
-      </a>
-      <ul class="navbar-nav">
-      <li>
-        Profile <span class="sr-only">(current)</span>
-      </li>
-      </ul>
-    </nav>
-    <div class="text-center ">
-      <span class="badge title badge-pill badge-primary"><strong>Enter Your Name</strong></span>
-    </div>
 
-    <div class="col-sm-4 bg-white box">
-      <form >
-        <div class="form-group">
-          <label for="exampleInputEmail1" class="bmd-label-floating">Name</label>
-          <input type="text" class="form-control" id="name">
-        </div>
-        <button type="button" class="btn btn-primary btn-raised" onclick="enter()">Submit</button>
-      </form>
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    Hello
+    <button id="btna">CLICK</button>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
     <script src="js/bootstrap-material-design.js"></script>
-    <script>$(document).ready(function() { $('body').bootstrapMaterialDesign(); });</script>
+
+    <script>
+    $(document).ready(function() 
+    { 
+
+        $('body').bootstrapMaterialDesign(); 
+        $('#btna').click(function(){
+              alert("hellow");
+              name="maya";
+              scr="200";
+              $.ajax({
+                         type: 'GET',
+                         url: 'http://www.creatnlrn.com/api/test/user/'+name+'/'+scr+'/',
+                         //data: {'name':'abc','score' : '80'},
+                         cache: false,
+                         success: function(response){
+                          alert("done");
+                          },
+                          error: function (response) {
+                          alert(response);
+                          }
+                    });
+ 
+
+
+        });
+    });
+
+  </script>
     <script type="text/javascript">
       function enter(){
-        var name= document.getElementById("name").value;
-        if (name == "") {
-          alert ("Please enter your name"); 
-        } else {
-          localStorage.setItem("name",name);
-          window.location.href = "home.html";
-        }
+
       }
     </script>
 
