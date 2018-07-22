@@ -21,18 +21,14 @@ var name= "hii";
        type: 'GET',
        //url: 'http://www.creatnlrn.com/api/result.php',
        url: 'http://www.creatnlrn.com/api/test/user/divya/100/',
-       data: {'name':'abc','score' : '90'}  ,
+       //data: {'name':'abc','score' : '90'}  ,
        cache: false,
        success: function(response){
         window.location.href = "../index.html";
       },
-      error: function(xhr, status, error) {
-        var err = eval("(" + xhr.responseText + ")");
-        alert(err.Message);
-      }
-      // error: function (response) {
-      //  alert(response);
-      // }
+       error: function (response) {
+        alert(response.responseText);
+       }
       });
       sessionStorage.clear();    
     } else {
